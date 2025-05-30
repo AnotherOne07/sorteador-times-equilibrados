@@ -1,0 +1,70 @@
+[
+  {
+    "nome": "Salomão",
+    "estrelas": 5
+  },
+  {
+    "nome": "Rafinha",
+    "estrelas": 5
+  },
+  {
+    "nome": "Almir",
+    "estrelas": 5
+  },
+  {
+    "nome": "Gil",
+    "estrelas": 5
+  },
+  {
+    "nome": "Kawã",
+    "estrelas": 4
+  },
+  {
+    "nome": "Kalian",
+    "estrelas": 4
+  },
+  {
+    "nome": "Dias",
+    "estrelas": 4
+  },
+  {
+    "nome": "Derick",
+    "estrelas": 4
+  },
+  {
+    "nome": "Gustavo",
+    "estrelas": 3
+  },
+  {
+    "nome": "Du",
+    "estrelas": 3
+  },
+  {
+    "nome": "Marcos",
+    "estrelas": 3
+  },
+  {
+    "nome": "Breno",
+    "estrelas": 3
+  },
+  {
+    "nome": "Wendel",
+    "estrelas": 2
+  },
+  {
+    "nome": "Geninho",
+    "estrelas": 2
+  },
+  {
+    "nome": "Braga",
+    "estrelas": 2
+  },
+  {
+    "nome": "Th",
+    "estrelas": 2
+  },
+  {
+    "nome": "Saulo",
+    "estrelas": 2
+  }
+]
