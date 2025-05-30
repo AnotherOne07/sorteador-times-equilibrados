@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Sorteador de Times Equilibrados</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .input-section, .output-section {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        button.secondary {
+            background: #2196F3;
+        }
+        button.danger {
+            background: #f44336;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .team {
+            margin-bottom: 20px;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .team h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .stats {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e9e9e9;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sorteador de Times Equilibrados</h1>
+    <div class="container">
+        <div class="input-section">
+            <h2>Adicionar Jogador</h2>
+            <input type="text" id="nome" placeholder="Nome do Jogador">
+            <input type="number" id="estrelas" placeholder="Estrelas (1-5)" min="1" max="5">
+            <button onclick="adicionarJogador()">Adicionar</button>
+            <button onclick="gerarJogadoresTeste()" class="secondary" style="margin-top: 10px;">Gerar 20 Jogadores de Teste</button>
+            <h2>Jogadores (Total: <span id="totalJogadores">0</span>)</h2>
+            <table id="jogadoresTable">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Estrelas</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="jogadoresBody"></tbody>
+            </table>
+            <button onclick="sortearTimes()" style="margin-top: 20px;">Sortear Times</button>
+            <button onclick="limparJogadores()" class="danger" style="margin-top: 10px;">Limpar Jogadores</button>
+        </div>
+        <div class="output-section">
+            <h2>Times Sorteados</h2>
+            <div id="timesContainer"></div>
+        </div>
+    </div>
+
+    <script>
+        let jogadores = [];
+
+        function atualizarTotalJogadores() {
+            document.getElementById('totalJogadores').textContent = jogadores.length;
+        }
+
+        function adicionarJogador() {
+            const nome = document.getElementById('nome').value.trim();
+            const estrelas = parseInt(document.getElementById('estrelas').value);
+
+            if (!nome || isNaN(estrelas) || estrelas < 1 || estrelas > 5) {
+                alert('Preencha o nome e as estrelas (1-5) corretamente!');
+                return;
+            }
+
+            jogadores.push({ nome, estrelas });
+            atualizarTabelaJogadores();
+            document.getElementById('nome').value = '';
+            document.getElementById('estrelas').value = '';
+            atualizarTotalJogadores();
+        }
+
+        function gerarJogadoresTeste() {
+            const nomesTeste = [
+                "João", "Maria", "Pedro", "Ana", "Lucas", "Carla", "Marcos", "Julia", 
+                "Rafael", "Fernanda", "Gustavo", "Beatriz", "Daniel", "Amanda", 
+                "Roberto", "Patricia", "Felipe", "Larissa", "Eduardo", "Camila"
+            ];
+            const estrelasTeste = [1, 1, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 1, 2, 3, 4];
+
+            for (let i = 0; i < 20; i++) {
+                jogadores.push({
+                    nome: nomesTeste[i],
+                    estrelas: estrelasTeste[i]
+                });
+            }
+
+            atualizarTabelaJogadores();
+            atualizarTotalJogadores();
+        }
+
+        function atualizarTabelaJogadores() {
+            const tbody = document.getElementById('jogadoresBody');
+            tbody.innerHTML = '';
+            jogadores.forEach((jogador, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${jogador.nome}</td>
+                    <td>${'★'.repeat(jogador.estrelas)}${'☆'.repeat(5 - jogador.estrelas)}</td>
+                    <td><button onclick="removerJogador(${index})" class="danger" style="padding: 5px;">Remover</button></td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function removerJogador(index) {
+            jogadores.splice(index, 1);
+            atualizarTabelaJogadores();
+            atualizarTotalJogadores();
+        }
+
+        function limparJogadores() {
+            jogadores = [];
+            atualizarTabelaJogadores();
+            atualizarTotalJogadores();
+            document.getElementById('timesContainer').innerHTML = '';
+        }
+
+        function sortearTimes() {
+            if (jogadores.length < 4) {
+                alert('Adicione pelo menos 4 jogadores para formar times!');
+                return;
+            }
+
+            // 1. Ordenar jogadores por estrelas (decrescente)
+            const jogadoresOrdenados = [...jogadores].sort((a, b) => b.estrelas - a.estrelas);
+            
+            // 2. Criar 4 times vazios
+            const times = Array.from({ length: 4 }, (_, i) => ({
+                id: i + 1,
+                jogadores: [],
+                totalEstrelas: 0,
+                mediaEstrelas: 0
+            }));
+
+            // 3. Distribuição balanceada
+            let currentTeam = 0;
+            let direction = 1; // 1 para frente, -1 para trás
+            
+            for (const jogador of jogadoresOrdenados) {
+                // Adiciona jogador ao time atual
+                times[currentTeam].jogadores.push(jogador);
+                times[currentTeam].totalEstrelas += jogador.estrelas;
+                times[currentTeam].mediaEstrelas = times[currentTeam].totalEstrelas / times[currentTeam].jogadores.length;
+                
+                // Alterna a direção quando chega nas extremidades
+                if (currentTeam === 3 && direction === 1) {
+                    direction = -1;
+                } else if (currentTeam === 0 && direction === -1) {
+                    direction = 1;
+                } else {
+                    currentTeam += direction;
+                }
+            }
+
+            // 4. Balanceamento final - ajustar jogadores para equilibrar as médias
+            balancearTimes(times);
+
+            // Exibir os times
+            exibirTimes(times);
+        }
+
+        function balancearTimes(times) {
+            // Ordenar times por média (crescente)
+            times.sort((a, b) => a.mediaEstrelas - b.mediaEstrelas);
+            
+            const MAX_ITERATIONS = 100;
+            let iterations = 0;
+            let balanced = false;
+            
+            while (!balanced && iterations < MAX_ITERATIONS) {
+                balanced = true;
+                
+                // Para cada par de times (menor e maior média)
+                for (let i = 0; i < times.length - 1; i++) {
+                    for (let j = i + 1; j < times.length; j++) {
+                        const diff = times[j].mediaEstrelas - times[i].mediaEstrelas;
+                        
+                        // Se a diferença for significativa (> 0.5)
+                        if (diff > 0.5) {
+                            // Tentar encontrar um jogador para trocar
+                            const melhorTroca = encontrarMelhorTroca(times[i], times[j]);
+                            
+                            if (melhorTroca) {
+                                realizarTroca(times[i], times[j], melhorTroca.jogadorI, melhorTroca.jogadorJ);
+                                balanced = false;
+                            }
+                        }
+                    }
+                }
+                
+                iterations++;
+            }
+        }
+
+        function encontrarMelhorTroca(timeA, timeB) {
+            let melhorTroca = null;
+            let melhorMelhoria = 0;
+            
+            // Procurar a melhor troca entre os jogadores dos dois times
+            for (const jogadorA of timeA.jogadores) {
+                for (const jogadorB of timeB.jogadores) {
+                    const diffAtual = timeB.mediaEstrelas - timeA.mediaEstrelas;
+                    
+                    // Calcular novas médias se trocássemos esses jogadores
+                    const novaMediaA = (timeA.totalEstrelas - jogadorA.estrelas + jogadorB.estrelas) / timeA.jogadores.length;
+                    const novaMediaB = (timeB.totalEstrelas - jogadorB.estrelas + jogadorA.estrelas) / timeB.jogadores.length;
+                    const novaDiff = novaMediaB - novaMediaA;
+                    
+                    // Verificar se a troca melhora o equilíbrio
+                    const melhoria = Math.abs(diffAtual) - Math.abs(novaDiff);
+                    
+                    if (melhoria > melhorMelhoria) {
+                        melhorMelhoria = melhoria;
+                        melhorTroca = {
+                            jogadorI: jogadorA,
+                            jogadorJ: jogadorB,
+                            melhoria: melhoria
+                        };
+                    }
+                }
+            }
+            
+            return melhorTroca;
+        }
+
+        function realizarTroca(timeA, timeB, jogadorA, jogadorB) {
+            // Remover jogadores dos times originais
+            timeA.jogadores = timeA.jogadores.filter(j => j !== jogadorA);
+            timeB.jogadores = timeB.jogadores.filter(j => j !== jogadorB);
+            
+            // Adicionar jogadores trocados
+            timeA.jogadores.push(jogadorB);
+            timeB.jogadores.push(jogadorA);
+            
+            // Atualizar totais e médias
+            timeA.totalEstrelas = timeA.totalEstrelas - jogadorA.estrelas + jogadorB.estrelas;
+            timeB.totalEstrelas = timeB.totalEstrelas - jogadorB.estrelas + jogadorA.estrelas;
+            
+            timeA.mediaEstrelas = timeA.totalEstrelas / timeA.jogadores.length;
+            timeB.mediaEstrelas = timeB.totalEstrelas / timeB.jogadores.length;
+        }
+
+        function exibirTimes(times) {
+            const container = document.getElementById('timesContainer');
+            container.innerHTML = '';
+            
+            // Calcular estatísticas gerais
+            const totalJogadores = times.reduce((sum, time) => sum + time.jogadores.length, 0);
+            const mediaGeral = times.reduce((sum, time) => sum + time.totalEstrelas, 0) / totalJogadores;
+            
+            // Ordenar times por média (para exibição)
+            times.sort((a, b) => a.mediaEstrelas - b.mediaEstrelas);
+
+            // Exibir estatísticas
+            const statsDiv = document.createElement('div');
+            statsDiv.className = 'stats';
+            statsDiv.innerHTML = `<strong>Estatísticas Gerais:</strong> ${totalJogadores} jogadores | Média geral: ${mediaGeral.toFixed(2)} estrelas`;
+            container.appendChild(statsDiv);
+
+            // Exibir cada time
+            times.forEach(time => {
+                const teamDiv = document.createElement('div');
+                teamDiv.className = 'team';
+                teamDiv.innerHTML = `
+                    <h3>Time ${time.id} (${time.jogadores.length} jogadores | Total: ${time.totalEstrelas} estrelas | Média: ${time.mediaEstrelas.toFixed(2)} ${'★'.repeat(Math.round(time.mediaEstrelas))})</h3>
+                    <ul>
+                        ${time.jogadores.map(j => `<li>${j.nome} - ${'★'.repeat(j.estrelas)}${'☆'.repeat(5 - j.estrelas)}</li>`).join('')}
+                    </ul>
+                `;
+                container.appendChild(teamDiv);
+            });
+        }
+
+        // Inicializa o total de jogadores
+        atualizarTotalJogadores();
+    </script>
+</body>
+</html>
