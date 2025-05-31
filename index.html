@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorteador de Times Equilibrados</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,29 +14,46 @@
             <input type="text" id="nome" placeholder="Nome do Jogador">
             <input type="number" id="estrelas" placeholder="Estrelas (1-5)" min="1" max="5">
             <button onclick="adicionarJogador()">Adicionar</button>
-            <!-- Substitua a seção de carregar jogadores por isso -->
+            <button onclick="gerarJogadoresTeste()" class="secondary">Gerar Jogadores Teste</button>
+            
             <h2>Carregar Jogadores</h2>
-            <button onclick="carregarJogadoresPadrao()" class="secondary">Carregar todos os jogadores</button>
-            <button onclick="gerarJogadoresTeste()" class="secondary" style="margin-top: 10px;">Gerar 20 Jogadores de Teste</button>
+            <button onclick="carregarJogadoresPadrao()" class="secondary">Carregar Lista Padrão</button>
+            
+            <h2>Configurações do Sorteio</h2>
+            <div class="config-section">
+                <label for="quantidadeTimes">Quantidade de Times:</label>
+                <select id="quantidadeTimes">
+                    <option value="2">2 Times</option>
+                    <option value="3">3 Times</option>
+                    <option value="4" selected>4 Times</option>
+                    <option value="5">5 Times</option>
+                    <option value="6">6 Times</option>
+                </select>
+            </div>
+            
             <h2>Jogadores (Total: <span id="totalJogadores">0</span>)</h2>
-            <table id="jogadoresTable">
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Estrelas</th>
-                        <th>Ação</th>
-                    </tr>
-                </thead>
-                <tbody id="jogadoresBody"></tbody>
-            </table>
-            <!-- Adicione após a tabela de jogadores -->
             <div class="selection-buttons">
                 <button onclick="selecionarTodos()" class="secondary">Selecionar Todos</button>
-                <button onclick="deselecionarTodos()" class="secondary">Deselecionar Todos</button>
+                <button onclick="deselecionarTodos()" class="secondary">Deselecionar</button>
             </div>
-            <button onclick="sortearTimes()" style="margin-top: 20px;">Sortear Times</button>
-            <button onclick="limparJogadores()" class="danger" style="margin-top: 10px;">Limpar Jogadores</button>
+            <div class="table-container">
+                <table id="jogadoresTable">
+                    <thead>
+                        <tr>
+                            <th>Selecionar</th>
+                            <th>Nome</th>
+                            <th>Estrelas</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="jogadoresBody"></tbody>
+                </table>
+            </div>
+            
+            <button onclick="sortearTimes()">Sortear Times</button>
+            <button onclick="limparJogadores()" class="danger">Limpar Jogadores</button>
         </div>
+        
         <div class="output-section">
             <h2>Times Sorteados</h2>
             <div id="timesContainer"></div>

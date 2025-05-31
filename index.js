@@ -110,10 +110,11 @@ function limparJogadores() {
 }
 
 function sortearTimes() {
+    const quantidadeTimes = parseInt(document.getElementById('quantidadeTimes').value);
     const jogadoresSelecionados = jogadores.filter(j => j.selecionado);
     
-    if (jogadoresSelecionados.length < 4) {
-        alert('Adicione pelo menos 4 jogadores para formar times!');
+    if (jogadoresSelecionados.length < quantidadeTimes) {
+        alert(`Selecione pelo menos ${quantidadeTimes} jogadores para formar ${quantidadeTimes} times!`);
         return;
     }
 
@@ -123,8 +124,8 @@ function sortearTimes() {
     // 2. Ordenar por estrelas (decrescente) após embaralhar
     const jogadoresOrdenados = [...jogadoresEmbaralhados].sort((a, b) => b.estrelas - a.estrelas);
     
-    // 3. Criar 4 times vazios
-    const times = Array.from({ length: 4 }, (_, i) => ({
+    // 3. Criar times vazios conforme a quantidade selecionada
+    const times = Array.from({ length: quantidadeTimes }, (_, i) => ({
         id: i + 1,
         jogadores: [],
         totalEstrelas: 0,
@@ -141,7 +142,7 @@ function sortearTimes() {
         times[currentTeam].mediaEstrelas = times[currentTeam].totalEstrelas / times[currentTeam].jogadores.length;
         
         // Alternar direção
-        if (currentTeam === 3 && direction === 1) {
+        if (currentTeam === quantidadeTimes - 1 && direction === 1) {
             direction = -1;
         } else if (currentTeam === 0 && direction === -1) {
             direction = 1;
@@ -273,7 +274,11 @@ function exibirTimes(times) {
     // Exibir estatísticas
     const statsDiv = document.createElement('div');
     statsDiv.className = 'stats';
-    statsDiv.innerHTML = `<strong>Estatísticas Gerais:</strong> ${totalJogadores} jogadores | Média geral: ${mediaGeral.toFixed(2)} estrelas`;
+    statsDiv.innerHTML = `
+        <strong>Estatísticas Gerais:</strong> 
+        ${times.length} times | ${totalJogadores} jogadores | 
+        Média geral: ${mediaGeral.toFixed(2)} estrelas
+    `;
     container.appendChild(statsDiv);
 
     // Exibir cada time
