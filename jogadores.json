@@ -1,70 +1,146 @@
 [
   {
-    "nome": "Salomão",
-    "estrelas": 5
-  },
-  {
-    "nome": "Rafinha",
-    "estrelas": 5
-  },
-  {
     "nome": "Almir",
     "estrelas": 5
   },
   {
-    "nome": "Gil",
-    "estrelas": 5
+    "nome": "Aryel",
+    "estrelas": 2
   },
   {
-    "nome": "Kawã",
-    "estrelas": 4
-  },
-  {
-    "nome": "Kalian",
-    "estrelas": 4
-  },
-  {
-    "nome": "Dias",
-    "estrelas": 4
-  },
-  {
-    "nome": "Derick",
-    "estrelas": 4
-  },
-  {
-    "nome": "Gustavo",
-    "estrelas": 3
-  },
-  {
-    "nome": "Du",
-    "estrelas": 3
-  },
-  {
-    "nome": "Marcos",
-    "estrelas": 3
+    "nome": "Braga",
+    "estrelas": 1
   },
   {
     "nome": "Breno",
     "estrelas": 3
   },
   {
-    "nome": "Wendel",
+    "nome": "Neném",
     "estrelas": 2
+  },
+  {
+    "nome": "Cauã Dias",
+    "estrelas": 4
+  },
+  {
+    "nome": "Daniel",
+    "estrelas": 3
+  },
+  {
+    "nome": "Cebola",
+    "estrelas": 3
+  },
+  {
+    "nome": "Darlam",
+    "estrelas": 3
+  },
+  {
+    "nome": "Davi",
+    "estrelas": 3
+  },
+  {
+    "nome": "Derick",
+    "estrelas": 4
+  },
+  {
+    "nome": "Diogo",
+    "estrelas": 3
+  },
+  {
+    "nome": "Flávio",
+    "estrelas": 2
+  },
+  {
+    "nome": "Du",
+    "estrelas": 3
+  },
+  {
+    "nome": "Gaspar",
+    "estrelas": 3
   },
   {
     "nome": "Geninho",
+    "estrelas": 1
+  },
+  {
+    "nome": "Gil",
+    "estrelas": 5
+  },
+  {
+    "nome": "Gustavo",
+    "estrelas": 3
+  },
+  {
+    "nome": "Iuri",
+    "estrelas": 4
+  },
+  {
+    "nome": "Junior",
+    "estrelas": 5
+  },
+  {
+    "nome": "Kalian",
+    "estrelas": 4
+  },
+  {
+    "nome": "Kauan",
+    "estrelas": 1
+  },
+  {
+    "nome": "Kawã",
+    "estrelas": 4
+  },
+  {
+    "nome": "Lucivan",
+    "estrelas": 3
+  },
+  {
+    "nome": "Marcos",
     "estrelas": 2
   },
   {
-    "nome": "Braga",
+    "nome": "Otávio",
+    "estrelas": 5
+  },
+  {
+    "nome": "Paulo",
     "estrelas": 2
   },
   {
-    "nome": "Th",
-    "estrelas": 2
+    "nome": "Rafinha",
+    "estrelas": 5
+  },
+  {
+    "nome": "Riquelme",
+    "estrelas": 3
+  },
+  {
+    "nome": "Salomão",
+    "estrelas": 5
   },
   {
     "nome": "Saulo",
     "estrelas": 2
+  },
+  {
+    "nome": "Thiago",
+    "estrelas": 2
+  },
+  {
+    "nome": "Vitor",
+    "estrelas": 4
+  },
+  {
+    "nome": "Wendel",
+    "estrelas": 1
+  },
+  {
+    "nome": "Wil",
+    "estrelas": 2
+  },
+  {
+    "nome": "Yago",
+    "estrelas": 4
   }
 ]
