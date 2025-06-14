@@ -111,15 +111,15 @@ function limparJogadores() {
 
 function sortearTimes() {
     const quantidadeTimes = parseInt(document.getElementById('quantidadeTimes').value);
-    const jogadoresSelecionados = jogadores.filter(j => j.selecionado);
     
-    if (jogadoresSelecionados.length < quantidadeTimes) {
-        alert(`Selecione pelo menos ${quantidadeTimes} jogadores para formar ${quantidadeTimes} times!`);
+    // Pegar TODOS os jogadores, não filtrar por selecionados
+    if (jogadores.length < quantidadeTimes) {
+        alert(`É necessário ter pelo menos ${quantidadeTimes} jogadores para formar ${quantidadeTimes} times!`);
         return;
     }
 
-    // 1. Embaralhar os jogadores de forma verdadeiramente aleatória
-    const jogadoresEmbaralhados = embaralharArray([...jogadoresSelecionados]);
+    // 1. Embaralhar TODOS os jogadores
+    const jogadoresEmbaralhados = embaralharArray([...jogadores]);
     
     // 2. Ordenar por estrelas (decrescente) após embaralhar
     const jogadoresOrdenados = [...jogadoresEmbaralhados].sort((a, b) => b.estrelas - a.estrelas);
@@ -288,7 +288,11 @@ function exibirTimes(times) {
         teamDiv.innerHTML = `
             <h3>Time ${time.id} (${time.jogadores.length} jogadores | Total: ${time.totalEstrelas} estrelas | Média: ${time.mediaEstrelas.toFixed(2)} ${'★'.repeat(Math.round(time.mediaEstrelas))})</h3>
             <ul>
-                ${time.jogadores.map(j => `<li>${j.nome} - ${'★'.repeat(j.estrelas)}${'☆'.repeat(5 - j.estrelas)}</li>`).join('')}
+                ${time.jogadores.map(j => {
+                    // Verifica se o jogador está marcado como presente
+                    const estaPresente = jogadores.find(p => p.nome === j.nome)?.selecionado;
+                    return `<li>${j.nome}${estaPresente ? '' : ' <span class="ausente">(A)</span>'} - ${'★'.repeat(j.estrelas)}${'☆'.repeat(5 - j.estrelas)}</li>`;
+                }).join('')}
             </ul>
         `;
         container.appendChild(teamDiv);
