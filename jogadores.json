@@ -8,6 +8,10 @@
     "estrelas": 2
   },
   {
+    "nome": "Biel",
+    "estrelas": 4
+  },
+  {
     "nome": "Braga",
     "estrelas": 1
   },
@@ -21,6 +25,10 @@
   },
   {
     "nome": "Cauã Dias",
+    "estrelas": 4
+  },
+  {
+    "nome": "Cleydsson",
     "estrelas": 4
   },
   {
@@ -96,20 +104,16 @@
     "estrelas": 4
   },
   {
-    "nome": "Lucivan",
-    "estrelas": 3
-  },
-  {
     "nome": "Marcos",
     "estrelas": 2
   },
   {
-    "nome": "Otávio",
+    "nome": "Martins",
     "estrelas": 5
   },
   {
-    "nome": "Paulo",
-    "estrelas": 2
+    "nome": "Otávio",
+    "estrelas": 5
   },
   {
     "nome": "Rafinha",
@@ -124,20 +128,12 @@
     "estrelas": 5
   },
   {
-    "nome": "Saulo",
-    "estrelas": 2
-  },
-  {
     "nome": "Thiago",
     "estrelas": 2
   },
   {
     "nome": "Vitor",
     "estrelas": 4
-  },
-  {
-    "nome": "Wendel",
-    "estrelas": 1
   },
   {
     "nome": "Wil",
