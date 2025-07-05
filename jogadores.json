@@ -1,5 +1,9 @@
 [
   {
+    "nome": "Abdon",
+    "estrelas": 3
+  },
+  {
     "nome": "Alex",
     "estrelas": 4
   },
@@ -16,20 +20,12 @@
     "estrelas": 4
   },
   {
-    "nome": "Braga",
-    "estrelas": 1
-  },
-  {
     "nome": "Breno",
     "estrelas": 3
   },
   {
     "nome": "Neném",
     "estrelas": 2
-  },
-  {
-    "nome": "Cauã Dias",
-    "estrelas": 4
   },
   {
     "nome": "Cleydsson",
@@ -41,14 +37,6 @@
   },
   {
     "nome": "Cebola",
-    "estrelas": 3
-  },
-  {
-    "nome": "Darlam",
-    "estrelas": 3
-  },
-  {
-    "nome": "Davi",
     "estrelas": 3
   },
   {
@@ -68,14 +56,6 @@
     "estrelas": 3
   },
   {
-    "nome": "Gaspar",
-    "estrelas": 3
-  },
-  {
-    "nome": "Geninho",
-    "estrelas": 1
-  },
-  {
     "nome": "Gil",
     "estrelas": 5
   },
@@ -90,6 +70,10 @@
   {
     "nome": "Iuri",
     "estrelas": 4
+  },
+  {
+    "nome": "Julio Matheus",
+    "estrelas": 3
   },
   {
     "nome": "Junior",
@@ -114,6 +98,10 @@
   {
     "nome": "Martins",
     "estrelas": 5
+  },
+  {
+    "nome": "Matheus",
+    "estrelas": 4
   },
   {
     "nome": "Otávio",
