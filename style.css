@@ -190,6 +190,19 @@ tr:hover {
     color: #ffb74d; /* Amarelo/laranja para as estrelas */
 }
 
+/* Adicionar estilo para meia estrela */
+.meia-estrela {
+    position: relative;
+    display: inline-block;
+}
+.meia-estrela::after {
+    content: "★";
+    position: absolute;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+}
+
 /* Elementos de seleção */
 input[type="checkbox"] {
     -webkit-appearance: none;
