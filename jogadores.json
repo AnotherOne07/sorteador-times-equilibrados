@@ -4,10 +4,6 @@
     "estrelas": 3.5
   },
   {
-    "nome": "Alex",
-    "estrelas": 3.5
-  },
-  {
     "nome": "Alefy",
     "estrelas": 3.0
   },
@@ -44,16 +40,16 @@
     "estrelas": 2.5
   },
   {
-    "nome": "Cebola",
-    "estrelas": 2.5
-  },
-  {
     "nome": "Derick",
     "estrelas": 3.5
   },
   {
     "nome": "Diogo",
     "estrelas": 3.0
+  },
+  {
+    "nome": "Elysson",
+    "estrelas": 3.5
   },
   {
     "nome": "Flávio",
@@ -104,16 +100,8 @@
     "estrelas": 4.0
   },
   {
-    "nome": "Lucas",
-    "estrelas": 3.0
-  },
-  {
-    "nome": "Marcos",
-    "estrelas": 2.5
-  },
-  {
-    "nome": "Martins",
-    "estrelas": 4.5
+    "nome": "Marcos Vinícius",
+    "estrelas": 4.0
   },
   {
     "nome": "Matheus",
@@ -130,6 +118,10 @@
   {
     "nome": "Riquelme",
     "estrelas": 3.5
+  },
+  {
+    "nome": "Ronisson",
+    "estrelas": 3.0
   },
   {
     "nome": "Salomão",
