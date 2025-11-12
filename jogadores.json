@@ -1,9 +1,5 @@
 [
   {
-    "nome": "Abdon",
-    "estrelas": 3.5
-  },
-  {
     "nome": "Alefy",
     "estrelas": 3.0
   },
@@ -12,12 +8,8 @@
     "estrelas": 4.5
   },
   {
-    "nome": "Aryel",
-    "estrelas": 2.5
-  },
-  {
-    "nome": "Biel",
-    "estrelas": 3.0
+    "nome": "Arthur",
+    "estrelas": 2.0
   },
   {
     "nome": "Breno",
@@ -50,6 +42,10 @@
   {
     "nome": "Elysson",
     "estrelas": 3.5
+  },
+  {
+    "nome": "Darlam",
+    "estrelas": 2.0
   },
   {
     "nome": "Flávio",
@@ -112,6 +108,10 @@
     "estrelas": 4.0
   },
   {
+    "nome": "Pedrinho",
+    "estrelas": 2.0
+  },
+  {
     "nome": "Rafinha",
     "estrelas": 4.5
   },
@@ -126,6 +126,10 @@
   {
     "nome": "Salomão",
     "estrelas": 4.5
+  },
+  {
+    "nome": "Tico",
+    "estrelas": 2.0
   },
   {
     "nome": "Thiago",
