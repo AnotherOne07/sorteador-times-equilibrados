@@ -1,5 +1,9 @@
 [
   {
+    "nome": "Abdon",
+    "estrelas": 3.5
+  },
+  {
     "nome": "Alefy",
     "estrelas": 3.0
   },
@@ -20,16 +24,16 @@
     "estrelas": 2.0
   },
   {
-    "nome": "Cleydsson",
-    "estrelas": 3.5
-  },
-  {
     "nome": "Cauã Dias",
     "estrelas": 3.0
   },
   {
     "nome": "Daniel",
     "estrelas": 2.5
+  },
+  {
+    "nome": "Darlam",
+    "estrelas": 2.0
   },
   {
     "nome": "Derick",
@@ -100,6 +104,10 @@
     "estrelas": 4.0
   },
   {
+    "nome": "Martins",
+    "estrelas": 4.5
+  },
+  {
     "nome": "Matheus",
     "estrelas": 3.5
   },
@@ -121,7 +129,7 @@
   },
   {
     "nome": "Ronisson",
-    "estrelas": 3.0
+    "estrelas": 3.5
   },
   {
     "nome": "Salomão",
