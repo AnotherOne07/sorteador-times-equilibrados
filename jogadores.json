@@ -9,15 +9,19 @@
   },
   {
     "nome": "Almir",
-    "estrelas": 4.5
+    "estrelas": 4.0
   },
   {
     "nome": "Arthur",
-    "estrelas": 2.0
+    "estrelas": 1.5
+  },
+  {
+    "nome": "Arthur Dória",
+    "estrelas": 3.0
   },
   {
     "nome": "Breno",
-    "estrelas": 2.5
+    "estrelas": 2.0
   },
   {
     "nome": "Neném",
@@ -28,16 +32,16 @@
     "estrelas": 3.0
   },
   {
-    "nome": "Daniel",
-    "estrelas": 2.5
+    "nome": "Cleydsson",
+    "estrelas": 3.5
   },
   {
-    "nome": "Darlam",
+    "nome": "Daniel",
     "estrelas": 2.0
   },
   {
-    "nome": "Derick",
-    "estrelas": 3.5
+    "nome": "Darlam",
+    "estrelas": 1.5
   },
   {
     "nome": "Diogo",
@@ -45,19 +49,15 @@
   },
   {
     "nome": "Elysson",
-    "estrelas": 3.5
-  },
-  {
-    "nome": "Flávio",
-    "estrelas": 2.5
+    "estrelas": 3.0
   },
   {
     "nome": "Du",
-    "estrelas": 3.0
+    "estrelas": 2.0
   },
   {
     "nome": "Gaspar",
-    "estrelas": 3.0
+    "estrelas": 2.5
   },
   {
     "nome": "Gil",
@@ -65,11 +65,11 @@
   },
   {
     "nome": "Gustavo",
-    "estrelas": 3.0
+    "estrelas": 2.5
   },
   {
     "nome": "Gustavo Mattos",
-    "estrelas": 3.5
+    "estrelas": 4.0
   },
   {
     "nome": "Iuri",
@@ -77,19 +77,15 @@
   },
   {
     "nome": "Julio Matheus",
-    "estrelas": 2.5
+    "estrelas": 1.5
   },
   {
     "nome": "Junior",
-    "estrelas": 4.5
+    "estrelas": 4.0
   },
   {
     "nome": "Kalian",
-    "estrelas": 4.5
-  },
-  {
-    "nome": "Kauan",
-    "estrelas": 2.0
+    "estrelas": 3.5
   },
   {
     "nome": "Kawã",
@@ -97,7 +93,7 @@
   },
   {
     "nome": "Marcos Vinícius",
-    "estrelas": 4.0
+    "estrelas": 4.5
   },
   {
     "nome": "Martins",
@@ -105,11 +101,11 @@
   },
   {
     "nome": "Matheus",
-    "estrelas": 3.5
+    "estrelas": 3.0
   },
   {
     "nome": "Otávio",
-    "estrelas": 4.0
+    "estrelas": 3.0
   },
   {
     "nome": "Pedrinho",
@@ -117,11 +113,11 @@
   },
   {
     "nome": "Rafinha",
-    "estrelas": 4.5
+    "estrelas": 4.0
   },
   {
     "nome": "Riquelme",
-    "estrelas": 3.5
+    "estrelas": 3.0
   },
   {
     "nome": "Ronisson",
@@ -132,8 +128,8 @@
     "estrelas": 4.5
   },
   {
-    "nome": "Tico",
-    "estrelas": 2.0
+    "nome": "Sarapa",
+    "estrelas": 4.0
   },
   {
     "nome": "Thiago",
@@ -141,14 +137,10 @@
   },
   {
     "nome": "Vitor",
-    "estrelas": 4.0
+    "estrelas": 3.5
   },
   {
     "nome": "Wil",
-    "estrelas": 3.0
-  },
-  {
-    "nome": "Yago",
-    "estrelas": 3.5
+    "estrelas": 2.5
   }
 ]
